@@ -40,7 +40,7 @@
                 <img src="images/230715_3_180213.jpg" alt="イベント写真">
             </div>
             <div class="scroll"></div>
-            </div>
+            
         </section>
 
         <section class="comparison-section" id="comparison-title">
@@ -140,6 +140,8 @@
                     <div class="text-content">
                       <h3>土曜日/4回</h3>
                     <p>Junior クラス<br>13:30 - 14:30</p>
+                    <p>kidsクラス<br>12:30 - 13:20</p>
+                    <p>ヨガ入門(大人向け)<br>14:40 - 15:40</p>
                     </div>
                     </div>
                 </div>
@@ -159,7 +161,7 @@
                
                 <div class="content">
                   
-                  <section id="ticket"  id="ticket">
+                  <section id="ticket">
                     <h2>チケット制</h2>
                     <p class="note">いろんなレッスンを試したい方、お得にたくさん通いたい方、マイペースに学びたい方におすすめします！</p>
                     <table>
@@ -306,21 +308,21 @@
   <p class="contact-description">お気軽にお問い合わせください。</p>
     <div class="Form-Item">
       <p class="Form-Item-Label"><span class="Form-Item-Label-Required"></span>氏名</p>
-      <input type="text" class="Form-Item-Input" placeholder="例）山田太郎">
+      <input type="text" class="Form-Item-Input" id="name" placeholder="例）山田太郎">
     </div>
     <div class="Form-Item">
       <p class="Form-Item-Label"><span class="Form-Item-Label-Required"></span>メールアドレス</p>
-      <input type="email" class="Form-Item-Input" placeholder="例）example@gmail.com">
+      <input type="email" class="Form-Item-Input" id="email" placeholder="例）example@gmail.com">
     </div>
     <div class="Form-Item">
       <p class="Form-Item-Label"><span class="Form-Item-Label-Required"></span>電話番号</p>
-      <input type="text" class="Form-Item-Input" placeholder="例）000-0000-0000">
+      <input type="text" class="Form-Item-Input" id="phone" placeholder="例）000-0000-0000">
     </div>
     <div class="Form-Item">
       <p class="Form-Item-Label isMsg"><span class="Form-Item-Label-Required"></span>お問い合わせ内容</p>
-      <textarea class="Form-Item-Textarea"></textarea>
+      <textarea class="Form-Item-Textarea"  id="message"></textarea>
     </div>
-    <input type="submit" class="Form-Btn" value="送信">
+    <input type="submit" class="Form-Btn" id="submitBtn" value="送信">
     
 </section>
 <section class="map" id="map">
