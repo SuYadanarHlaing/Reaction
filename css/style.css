@@ -281,7 +281,14 @@ table thead th{
   border-radius: 55px;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(50px); /* 初期位置を下にずらす */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* ふわっと表示 */
   
+  }
+  .class-block.show {
+    opacity: 1;
+    transform: translateY(0); /* 元の位置に戻る */
   }
   .class-block:nth-child(4) {
     grid-column: 2 / 3;
@@ -390,8 +397,14 @@ table thead th{
     display: flex;
     align-items: flex-start;
     margin: 3rem;
+    opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
   }
-  
+  .balloon.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
   .balloon.left {
     flex-direction: row;
   }
@@ -486,11 +499,21 @@ table thead th{
   .person3 .chatting::after {
     border-top-color: #7D4698;
   }
+  @keyframes fadeInSlide {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
  
   .faq{
     display: flex;
     flex-direction: column;   
-            align-items: center;   
+     align-items: center;   
     align-items: center;
     min-height: 100vh; 
     padding: 20px;
@@ -511,7 +534,9 @@ table thead th{
     width: 700px;
     margin-bottom:25px;
     border: 1px solid #ebebeb;
-    
+    overflow: hidden; /* 必須：コンテンツの高さをアニメーション */
+  transition: max-height 0.9s ease; /* 高さをスムーズに */
+
 }
 
 .qa-1 summary {
@@ -562,7 +587,7 @@ table thead th{
     margin: 0;
     padding: 1em 3em 1.5em;
     color: #333;
-    transition: transform .5s, opacity .5s;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* スムーズなフェードイン */
 }
 
 .qa-1[open] p {
@@ -571,9 +596,12 @@ table thead th{
 }
 
 .qa-1 p::before {
-    color: #ff8d8d;
-    line-height: 1.2;
-    content: "A";
+  position: absolute;
+  left: 1em;
+  font-weight: 600;
+  font-size: 1.3em;
+  color: #ff8d8d;
+  content: "A";
 }
 #page_top { 
   width: 90px;
@@ -1233,7 +1261,9 @@ footer p{
     width: 50px;
     height: 50px;
     right: 15px;
-    bottom: 5px;
+    bottom: 10em;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(20px); /* 初期位置を少し下にずらす */
   }
 
   #page_top a::before {
@@ -1297,15 +1327,19 @@ footer p{
   }
   .address{
     font-size: 12px;
+    color: #555;
   }
   .social-links img{
-    margin: 30px;
+    display: flex;
+   justify-content: center;
+    margin: 20px;
     width: 45%;
     height:45%;
   }
   footer p{
     font-size: 12px;
     margin: 10px;
+    color: #555;
   }
 }
 

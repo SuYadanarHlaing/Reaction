@@ -14,13 +14,16 @@ function toggleMenu() {
   hamburgerMenu.classList.toggle('active');
 }
 function closeMenu() {
-  const navMenu = document.getElementById('nav-menu');
-  const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navMenu = document.getElementById('nav-menu');
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
 
-  // メニューとハンバーガーアイコンのクラスを削除して閉じる
-  navMenu.classList.remove('active');
-  hamburgerMenu.classList.remove('active');
+    // メニューとハンバーガーアイコンのクラスを削除して閉じる
+    navMenu.classList.remove('active');
+    hamburgerMenu.classList.remove('active');
 }
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const pageTopButton = document.getElementById("page_top");
@@ -52,3 +55,52 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const classBlocks = document.querySelectorAll(".class-block");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.1 });
+
+  classBlocks.forEach((block) => {
+    observer.observe(block);
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const balloons = document.querySelectorAll(".balloon");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // 遅延を設定
+          setTimeout(() => {
+            entry.target.classList.add("visible");
+          }, index * 500); // 各要素の表示に500msの間隔を追加
+
+          observer.unobserve(entry.target); // 監視を停止
+        }
+      });
+    },
+    {
+      threshold: 0.1, // 要素が10%見えたら発火
+    }
+  );
+
+  balloons.forEach((balloon) => observer.observe(balloon));
+});
+
+
+
+
+
