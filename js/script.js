@@ -13,12 +13,14 @@ function toggleMenu() {
   // ハンバーガーメニューアイコンの「×」アニメーション切り替え
   hamburgerMenu.classList.toggle('active');
 }
-document.querySelectorAll('#nav-menu a').forEach(navMenu => {
-  navMenu.addEventListener('click', function() {
-      const navMenu = document.getElementById('nav-menu');
-      navMenu.classList.remove('active'); // メニューを閉じる
-  });
-});
+function closeMenu() {
+  const navMenu = document.getElementById('nav-menu');
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+
+  // メニューとハンバーガーアイコンのクラスを削除して閉じる
+  navMenu.classList.remove('active');
+  hamburgerMenu.classList.remove('active');
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   const pageTopButton = document.getElementById("page_top");
@@ -48,5 +50,5 @@ document.addEventListener("DOMContentLoaded", function () {
       behavior: "smooth"
     });
   });
-  
+
 });
