@@ -216,7 +216,7 @@ table thead th{
 .table tr th:nth-child(2n) {
     position: relative;
     border-top: 15px solid #EF8633;
-    box-shadow: 60px 60px 5px 1px #000000;
+   
     background-color: #7D4698;
 
 }
@@ -777,30 +777,8 @@ footer p{
   header .logo img{
     padding: 0 5px;
   }
-  /* .hamburger-menu {
-    display: flex;
-   margin-right: 20px;
-  }
+
   
-
-  #nav-menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-  }
-
-  #nav-menu ul {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  #nav-menu.active {
-    display: flex;
-  } */
-
   /* ハンバーガーメニュー */
 .hamburger-menu {
   display: flex;
