@@ -41,8 +41,13 @@ body {
   header .logo img {
     padding: 0 85px;
     height: 90px;
+
     
   }
+  header .logo a{
+    scroll-behavior:inherit;
+  }
+
   
   
 /* ハンバーガーメニューのデザイン */
@@ -869,6 +874,9 @@ footer p{
 }
 
 @media screen and (max-width: 768px) {
+  html{
+    scroll-padding-top: 120px;
+  }
   header {
     
     z-index: 999;
