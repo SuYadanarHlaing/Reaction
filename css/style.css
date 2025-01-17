@@ -8,28 +8,40 @@ img {
     padding: 0;
     list-style: none;
     text-decoration: none;
+   
+    
+  }
+
+  
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+  html{
+    scroll-padding-top: 160px;
     scroll-behavior: smooth;
   }
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
+     
 }
 
   
   header {
+    background-color:#fff ;
+    top: 0;
     margin: 0 auto;
     display: flex;
+    position: sticky;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    
-    
+    z-index: 999;
+ 
   }
   
   header .logo img {
     padding: 0 85px;
     height: 90px;
+    
   }
   
   
@@ -88,6 +100,32 @@ body {
     font-size: 18px;
     font-weight:600;
   }
+  nav ul li a:hover {
+     color: #8c6cb8;
+     position: relative;
+     }
+    
+     nav ul li a::after{
+      content: "";
+      position: absolute;
+      bottom: 1em;
+      left: 0;
+      display: inline-block;
+      pointer-events: none;
+      width: 30px;
+      height: 30px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    nav ul li a:hover::after{
+      opacity: 1;
+      background: url(../images/logo/★Re_Action_kun_1\ .png); 
+      background-size: contain; 
+      background-repeat: no-repeat;
+      background-position: center top;
+      
+    }
   
   .hero {
     display: flex;
@@ -244,7 +282,7 @@ table thead th{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 140vh;
+  height: 70vh;
   }
   
 
@@ -269,12 +307,12 @@ table thead th{
   }
   .class-schedule {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns:1fr 1fr 1fr 1fr;
   grid-gap: 150px;
   }
   .class-block {
-  background-color: #8c6cb8;
-  color: white;
+  background-color: #fffbf4;
+  color: rgb(0, 0, 0);
   padding: 20px 50px 50px 50px;
   border-radius: 55px;
   text-align: center;
@@ -288,11 +326,40 @@ table thead th{
     opacity: 1;
     transform: translateY(0); /* 元の位置に戻る */
   }
-  .class-block:nth-child(4) {
-    grid-column: 2 / 3;
+ .class-block:nth-child(1) {
+  box-shadow: 0 6px 20px rgba(106, 0, 255, 0.582);
+  transition: opacity 0.2s ease, transform 0.2s ease;
     }
+    .class-block:nth-child(1) h3{
+      color: #ff0000;
+    }
+    
+    .class-block:nth-child(2) {
+      box-shadow: 0 6px 20px rgba(106, 0, 255, 0.582);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      }
+      .class-block:nth-child(2) h3{
+        color: #efb700;
+      }
+      .class-block:nth-child(3) {
+        box-shadow: 0 6px 20px rgba(106, 0, 255, 0.582);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .class-block:nth-child(3) h3{
+          color: #00ea14;
+        }
+        .class-block:nth-child(4) {
+          box-shadow: 0 6px 20px rgba(106, 0, 255, 0.582);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+          } 
+          .class-block:nth-child(4) h3{
+            color: #a55800;
+          }
+
   .class-block h3 {
   margin-top: 20px;
+  color: #8c6cb8;
+
   }
   .class-block p {
   margin: 10px 0;
@@ -302,22 +369,23 @@ table thead th{
   margin-top: 160px;
 }
   .sticky-menu {
+
     display: flex; /* 横並び配置 */
-    min-height: 100vh;
+    min-height: 120vh;
     
   }
   
   .menu {
-    top: 50px;
+    top: 220px;
     padding: 0 0 0 8em;
-    position: sticky; /* STICKY設定 */
-    width: 200px; /* 固定幅 */
-    height: 100vh; /* 高さを画面全体に固定 */
+    position: sticky;
+    width: 200px;
+    height: 20vh;
     display: flex;
-    flex-direction: column; /* 縦方向のメニュー項目 */
-    gap: 20px; /* 項目間のスペース */
-    
+    flex-direction: column;
+    gap: 20px;
   }
+  
   
   .menu a {
     text-decoration: none;
@@ -329,7 +397,8 @@ table thead th{
   }
   
   .menu a:hover {
-   text-decoration: underline;
+   color:#8c6cb8;
+   text-decoration:underline;
   }
   
   .content {
@@ -355,6 +424,7 @@ table thead th{
     margin-bottom: 10px;
     
   }
+
   #ticket .note{
     color: #555;
     margin-bottom: 40px;
@@ -513,7 +583,7 @@ table thead th{
     flex-direction: column;   
      align-items: center;   
     align-items: center;
-    min-height: 100vh; 
+    
     padding: 20px;
     
   }
@@ -684,6 +754,7 @@ table thead th{
 
 
 .Form-Item-Label {
+  text-align: left;
   width: 100%;
   max-width: 200px;
   letter-spacing: 0.05em;
@@ -799,8 +870,14 @@ footer p{
 
 @media screen and (max-width: 768px) {
   header {
+    
+    z-index: 999;
+    top: 0;
+    background-color: #ffffff;
     flex-wrap: wrap;
     padding: 10px;
+    position: sticky;
+    top: 0;
   }
   header .logo img{
     padding: 0 5px;
@@ -817,6 +894,7 @@ footer p{
   cursor: pointer;
   z-index: 1100;
 }
+
 
 .hamburger-menu span {
   display: block;
@@ -1057,7 +1135,7 @@ footer p{
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 125vh;
+      height: 90vh;
       }
        /* .sidebarのマージンを調整 */
   .sidebar {
@@ -1211,6 +1289,7 @@ footer p{
     /* FAQセクション全体のレイアウト調整 */
     .faq {
       padding: 10px;
+      
     }
   
     .faq h2 {
@@ -1264,6 +1343,7 @@ footer p{
     bottom: 10em;
     transition: opacity 0.3s ease, transform 0.3s ease;
     transform: translateY(20px); /* 初期位置を少し下にずらす */
+    z-index: 999;
   }
 
   #page_top a::before {
@@ -1299,26 +1379,38 @@ footer p{
   }
   .Form-Btn{
     font-size: 16px;
-    margin-left: 19em;
+    margin-left: 16em;
   }
    
   .Form-Item {
+    display: block;
     margin-bottom: 10px; /* 各フォームアイテム間の余白を小さく */
-  }
   
+  }
+  .Form-Item-Label{
+    margin-left: 70px;
+    text-align: left;
+
+  }
  
   
   .Form-Item-Textarea {
+    width: 60%;
+   
     padding: 6px 8px; /* 入力欄の内側の余白を小さく */
     font-size: 0.9rem; /* テキストサイズも少し小さく */
     height: 180px;
 
   }
+  .Form-Item-Label.isMsg{
+    margin-bottom: 10px;
+  }
   .Form-Item-Input {
-    width: 100%; /* 親要素の幅いっぱいに広げる */
+    width: 60%; /* 親要素の幅いっぱいに広げる */
+   
     max-width: 500px; /* 最大幅を設定（任意） */
     padding: 6px 8px; /* 余白の調整 */
-    box-sizing: border-box; /* paddingを含めてもwidthが崩れないようにする */
+    /* box-sizing: border-box; paddingを含めてもwidthが崩れないようにする */
     font-size: 0.9rem; /* テキストサイズ */
   }
   .map-title{
